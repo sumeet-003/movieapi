@@ -32,3 +32,21 @@ Request Body:
   "releaseYear": 2014,
   "rating": 8.6
 }
+## Live API
+
+Base URL:
+https://movieapi-production-0e26.up.railway.app
+
+### Endpoints
+
+POST /api/movies  
+GET /api/movies  
+GET /api/movies/{id}
+
+### Sample POST Body
+
+{
+  "title": "Interstellar",
+  "director": "Christopher Nolan",
+  "year": 2014
+}
