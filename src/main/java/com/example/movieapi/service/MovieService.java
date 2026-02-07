@@ -9,20 +9,23 @@ import java.util.List;
 @Service
 public class MovieService {
 
-    private List<Movie> movies = new ArrayList<>();
-    private long currentId = 1;
+    private final List<Movie> movies = new ArrayList<>();
+    private long nextId = 1;
 
     public Movie addMovie(Movie movie) {
-        movie.setId(currentId++);
+        movie.setId(nextId++);
         movies.add(movie);
         return movie;
     }
 
+    public List<Movie> getAllMovies() {
+        return movies;
+    }
+
     public Movie getMovieById(Long id) {
         return movies.stream()
-                .filter(movie -> movie.getId().equals(id))
+                .filter(m -> m.getId().equals(id))
                 .findFirst()
                 .orElse(null);
     }
 }
-
